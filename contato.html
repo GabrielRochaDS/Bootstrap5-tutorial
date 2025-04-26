@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/all.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <title>Contato - Tutorial Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .about-project {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-header {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+
+        .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="#">Tutorial Bootstrap</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+              <li class="nav-item"><a class="nav-link" href="componentes.html">Componentes</a></li>
+              <li class="nav-item"><a class="nav-link" href="exemplos.html">Exemplos</a></li>
+              <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-header text-center">
+                    <h1><i class="bi bi-envelope-paper-heart"></i> Fale Conosco</h1>
+                    <p class="lead">Envie suas dúvidas, sugestões ou feedback sobre nosso tutorial</p>
+                </div>
+
+                <div class="about-project mb-5">
+                    <h3><i class="bi bi-info-circle"></i> Sobre este Projeto</h3>
+                    <p>Este tutorial de Bootstrap foi desenvolvido para estudo prático do Bootstrap lecionado na disciplina de
+                        Desenvolvimento Web do curso de Sistemas de Informação da Universidade Federal Fluminense (UFF).
+                    </p>
+                    <p>O objetivo é fornecer um recurso educativo completo para estudantes e desenvolvedores
+                        que desejam dominar o Bootstrap 5, o framework front-end mais popular do mundo.</p>
+                    <p>Aqui você encontra:</p>
+                    <ul>
+                        <li>Exemplos práticos de todos os componentes principais</li>
+                        <li>Códigos prontos para implementação</li>
+                        <li>Boas práticas de desenvolvimento</li>
+                        <li>Técnicas de design responsivo</li>
+                    </ul>
+                    <p>Sua opinião é muito valiosa para nós! Ajude a melhorar este recurso educativo compartilhando suas
+                        impressões.</p>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="mb-4"><i class="bi bi-chat-square-text"></i> Formulário de Contato</h3>
+
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="nome" class="form-label">Seu Nome <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="nome" required
+                                    placeholder="Digite seu nome completo">
+                                <div class="invalid-feedback">
+                                    Por favor, insira seu nome.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Seu Email <span
+                                        class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" required
+                                    placeholder="nome@exemplo.com">
+                                <div class="invalid-feedback">
+                                    Por favor, insira um email válido.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="assunto" class="form-label">Assunto</label>
+                            <select class="form-select" id="assunto">
+                                <option selected>Selecione um assunto</option>
+                                <option value="duvida">Dúvida sobre o conteúdo</option>
+                                <option value="sugestao">Sugestão de melhoria</option>
+                                <option value="erro">Relatar erro</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label">Mensagem <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="mensagem" rows="5" required
+                                placeholder="Escreva sua mensagem aqui..."></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, escreva sua mensagem.
+                            </div>
+                            <div class="form-text">Mensagens com informações claras terão prioridade no atendimento.
+                            </div>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="newsletter">
+                            <label class="form-check-label" for="newsletter">Desejo receber novidades sobre atualizações
+                                do tutorial</label>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="reset" class="btn btn-outline-secondary me-md-2">
+                                <i class="bi bi-eraser"></i> Limpar
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-send"></i> Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="mt-5">
+                    <h4 class="text-center"><i class="bi bi-building"></i> Informações Institucionais</h4>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <p class="mb-0"><strong>Universidade:</strong> Federal Fluminense - UFF</p>
+                        <p class="mb-0"><strong>Instituto:</strong> Computação - DCC</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <p class="mb-0"><strong>Disciplina:</strong> Desenvolvimento Web</p>
+                        <p class="mb-0"><strong>Desenvolvido por:</strong> Gabriel Rocha dos Santos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">Tutorial Bootstrap &copy; 2025 - UFF</p>
+            <p class="mb-0 mt-2">
+                <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Exemplo de validação do formulário
+        (function () {
+            'use strict';
+
+            // Selecionar todos os formulários que queremos aplicar estilos de validação personalizados
+            var forms = document.querySelectorAll('.needs-validation');
+
+            // Loop sobre eles e evitar envio
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+        })();
+    </script>
+</body>
+
+</html>

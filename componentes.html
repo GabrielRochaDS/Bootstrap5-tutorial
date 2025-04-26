@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/all.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <title>Tutorial Bootstrap - Componentes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .component-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .code-link {
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Tutorial Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="componentes.html">Componentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="exemplos.html">Exemplos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Principais Componentes do Bootstrap</h1>
+
+        <!-- Popover e Tooltip -->
+        <div class="component-section" id="popover-tooltip">
+            <h2>Popover e Tooltip</h2>
+            <p class="lead">Componentes para exibir informações adicionais quando o usuário interage com um elemento.
+            </p>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h4>Tooltip</h4>
+                    <p>Passe o mouse sobre os botões para ver os tooltips:</p>
+                    <button type="button" class="btn btn-secondary me-2" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Tooltip no topo">
+                        Tooltip top
+                    </button>
+                    <button type="button" class="btn btn-secondary me-2" data-bs-toggle="tooltip"
+                        data-bs-placement="right" title="Tooltip à direita">
+                        Tooltip right
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        title="Tooltip em baixo">
+                        Tooltip bottom
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <h4>Popover</h4>
+                    <p>Clique nos botões para ver os popovers:</p>
+                    <button type="button" class="btn btn-primary me-2" data-bs-toggle="popover" data-bs-placement="top"
+                        data-bs-content="Conteúdo do popover no topo" title="Título do Popover">
+                        Popover top
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="popover" data-bs-placement="right"
+                        data-bs-content="Conteúdo do popover à direita" title="Título do Popover">
+                        Popover right
+                    </button>
+                </div>
+            </div>
+            <div class="text-center code-link">
+                <a href="exemplos.html#popover-tooltip-code" class="btn btn-outline-primary">Ver código deste
+                    componente</a>
+            </div>
+        </div>
+
+        <!-- Accordion e Media -->
+        <div class="component-section" id="accordion-media">
+            <h2>Accordion e Media</h2>
+            <p class="lead">Componentes para organizar conteúdo de forma expansível e para exibir mídia com texto.</p>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h4>Accordion</h4>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne">
+                                    Item do Accordion #1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Este é o primeiro item do accordion.</strong> Ele é mostrado por padrão até
+                                    que o collapse plugin adicione as classes apropriadas que usamos para estilizar cada
+                                    elemento.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo">
+                                    Item do Accordion #2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Este é o segundo item do accordion.</strong> Por padrão ele está escondido,
+                                    mas pode ser expandido clicando no cabeçalho.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Media Object</h4>
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <img src="/assets/images/mediaObject1.jpeg" alt="Imagem de exemplo">
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Exemplo de Media Object</h5>
+                            <p>Este é um exemplo de como usar o componente Media Object no Bootstrap. Ele é útil para
+                                alinhar imagens com conteúdo de texto.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <div class="flex-shrink-0">
+                            <img src="/assets/images/mediaObject2.jpeg" alt="Imagem de exemplo">
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5>Outro Exemplo</h5>
+                            <p>Você pode aninhar Media Objects para criar listas de comentários ou threads.</p>
+                            <div class="d-flex mt-3">
+                                <div class="flex-shrink-0">
+                                    <img src="/assets/images/mediaObject2.jpeg" alt="Imagem de exemplo">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6>Resposta</h6>
+                                    <p>Exemplo de resposta aninhada.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center code-link">
+                <a href="exemplos.html#accordion-media-code" class="btn btn-outline-primary">Ver código deste
+                    componente</a>
+            </div>
+        </div>
+
+        <!-- Buttons e Alert -->
+        <div class="component-section" id="buttons-alert">
+            <h2>Buttons e Alert</h2>
+            <p class="lead">Componentes para ações interativas e feedback ao usuário.</p>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h4>Buttons</h4>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-primary me-2">Primary</button>
+                        <button type="button" class="btn btn-secondary me-2">Secondary</button>
+                        <button type="button" class="btn btn-success me-2">Success</button>
+                        <button type="button" class="btn btn-danger me-2">Danger</button>
+                        <button type="button" class="btn btn-warning me-2">Warning</button>
+                        <button type="button" class="btn btn-info me-2">Info</button>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-outline-primary me-2">Outline Primary</button>
+                        <button type="button" class="btn btn-outline-secondary me-2">Outline Secondary</button>
+                        <button type="button" class="btn btn-outline-success me-2">Outline Success</button>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-primary btn-lg me-2">Large button</button>
+                        <button type="button" class="btn btn-secondary btn-sm me-2">Small button</button>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" type="button">Botão em bloco</button>
+                        <button class="btn btn-secondary" type="button">Outro botão em bloco</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Alerts</h4>
+                    <div class="alert alert-primary" role="alert">
+                        Um simples alerta primary - olhe só!
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Muito bem!</h4>
+                        <p>Você fez uma leitura bem sucedida desta mensagem de alerta importante. Esta mensagem de texto
+                            será um pouco mais longa para que você possa ver como o espaçamento dentro de um alerta
+                            funciona com este tipo de conteúdo.</p>
+                        <hr>
+                        <p class="mb-0">Sempre que precisar, use utilitários de margem para manter as coisas perfeitas.
+                        </p>
+                    </div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Alerta descartável!</strong> Você pode fechar este alerta.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center code-link">
+                <a href="exemplos.html#buttons-alert-code" class="btn btn-outline-primary">Ver código deste
+                    componente</a>
+            </div>
+        </div>
+
+        <!-- Carousel -->
+        <!-- Carousel -->
+        <div class="component-section" id="carousel">
+            <h2>Carousel</h2>
+            <p class="lead">Componente para criar slideshows de imagens ou conteúdo.</p>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="/assets/images/carousel1.png" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Primeiro slide</h5>
+                                    <p>Algum conteúdo representativo para o primeiro slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="/assets/images/carousel2.png" alt="Second slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Segundo slide</h5>
+                                    <p>Algum conteúdo representativo para o segundo slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="/assets/images/carousel3.png" alt="Third slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Terceiro slide</h5>
+                                    <p>Algum conteúdo representativo para o terceiro slide.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center code-link">
+                <a href="exemplos.html#carousel-code" class="btn btn-outline-primary">Ver código deste componente</a>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="component-section" id="modal">
+            <h2>Modal</h2>
+            <p class="lead">Janelas modais para diálogos, lightboxes, notificações ou conteúdo personalizado.</p>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Abrir Modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Título do Modal</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Conteúdo do modal vai aqui. Pode incluir texto, formulários ou outros componentes.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center code-link">
+                <a href="exemplos.html#modal-code" class="btn btn-outline-primary">Ver código deste componente</a>
+            </div>
+        </div>
+
+        <!-- Navbar Avançado -->
+        <div class="component-section" id="navbar">
+            <h2>Navbar Avançado</h2>
+            <p class="lead">Barra de navegação completa com dropdown, formulário de busca e mais.</p>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Meu Site</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarExample">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarExample">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Ação</a></li>
+                                    <li><a class="dropdown-item" href="#">Outra ação</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Algo mais</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Buscar">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="text-center code-link">
+                <a href="exemplos.html#navbar-code" class="btn btn-outline-primary">Ver código deste componente</a>
+            </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="component-section" id="cards">
+            <h2>Cards</h2>
+            <p class="lead">Contêineres flexíveis e extensíveis com múltiplas variações.</p>
+
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Título do Card</h5>
+                            <p class="card-text">Exemplo de texto rápido para construir o título do card e fazer o
+                                conteúdo do card.</p>
+                            <a href="#" class="btn btn-primary">Ir para algum lugar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Destaque
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card especial</h5>
+                            <p class="card-text">Com texto de apoio abaixo como introdução natural a conteúdos
+                                adicionais.</p>
+                            <a href="#" class="btn btn-danger">Ir para</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white bg-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Card escuro</h5>
+                            <p class="card-text">Algum texto rápido para construir sobre o título do card.</p>
+                            <a href="#" class="btn btn-outline-light">Botão</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center code-link">
+                <a href="exemplos.html#cards-code" class="btn btn-outline-primary">Ver código deste componente</a>
+            </div>
+        </div>
+
+        <!-- List Group -->
+        <div class="component-section" id="list-group">
+            <h2>List Group</h2>
+            <p class="lead">Exiba uma série de conteúdo em uma lista ordenada.</p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Lista básica</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">Um item</li>
+                        <li class="list-group-item">Um segundo item</li>
+                        <li class="list-group-item">Um terceiro item</li>
+                        <li class="list-group-item">Um quarto item</li>
+                        <li class="list-group-item">E um quinto item</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Lista com ações</h4>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active">
+                            Item ativo
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">Item</a>
+                        <a href="#" class="list-group-item list-group-item-action disabled">Item desabilitado</a>
+                        <a href="#" class="list-group-item list-group-item-action">Outro item</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center code-link">
+                <a href="exemplos.html#list-group-code" class="btn btn-outline-primary">Ver código deste componente</a>
+            </div>
+        </div>
+
+        <!-- Spinners -->
+        <div class="component-section" id="spinners">
+            <h2>Spinners</h2>
+            <p class="lead">Indicadores de carregamento para mostrar que o conteúdo está processando.</p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Spinners de borda</h4>
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <div class="spinner-border text-secondary" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <div class="spinner-border text-success" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Spinners de crescimento</h4>
+                    <div class="spinner-grow text-danger" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <div class="spinner-grow text-warning" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <div class="spinner-grow text-info" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center code-link">
+                <a href="exemplos.html#spinners-code" class="btn btn-outline-primary">Ver código deste componente</a>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">Tutorial Bootstrap &copy; 2025 - UFF</p>
+            <p class="mb-0 mt-2">
+                <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Ativar tooltips e popovers
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+        });
+    </script>
+</body>
+
+</html>

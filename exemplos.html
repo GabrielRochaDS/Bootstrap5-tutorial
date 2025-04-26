@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/all.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <title>Tutorial Bootstrap - Exemplos de Código</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    .code-section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .component-explanation {
+      background-color: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    pre {
+      background-color: #f8f9fa;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      border-left: 4px solid #0d6efd;
+    }
+
+    .component-link {
+      margin-top: 1.5rem;
+    }
+
+    .best-practices {
+      background-color: #e7f1ff;
+      border-left: 4px solid #0d6efd;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Tutorial Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="componentes.html">Componentes</a></li>
+          <li class="nav-item"><a class="nav-link" href="exemplos.html">Exemplos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="row mb-4">
+      <div class="col-12">
+        <h1 class="text-center mb-3">Exemplos de Código dos Componentes</h1>
+        <p class="lead text-center">Aprenda como implementar cada componente do Bootstrap com exemplos práticos e
+          explicações detalhadas.</p>
+      </div>
+    </div>
+
+    <!-- Popover e Tooltip -->
+    <div class="code-section" id="popover-tooltip-code">
+      <h2><i class="bi bi-chat-square-text me-2"></i>Popover e Tooltip</h2>
+
+      <div class="component-explanation">
+        <h4>O que são?</h4>
+        <p>Tooltips e Popovers são componentes flutuantes que fornecem informações adicionais quando o usuário interage
+          com um elemento.</p>
+
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Quando usar:</h5>
+          <ul>
+            <li><strong>Tooltips</strong>: Para explicações curtas sobre elementos de interface (ícones, botões, etc.)
+            </li>
+            <li><strong>Popovers</strong>: Para conteúdo mais rico que pode incluir títulos, texto e até HTML</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="mt-4"><i class="bi bi-cursor me-2"></i>Tooltip</h4>
+      <p>Tooltips requerem inicialização via JavaScript. Veja o código necessário:</p>
+
+      <pre><code>&lt;button type="button" class="btn btn-secondary" 
+        data-bs-toggle="tooltip" 
+        data-bs-placement="top" 
+        title="Tooltip no topo"&gt;
+        Tooltip top
+&lt;/button&gt;
+
+&lt;script&gt;
+    // Ativar tooltips - obrigatório!
+    document.addEventListener('DOMContentLoaded', function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    });
+&lt;/script&gt;</code></pre>
+
+      <div class="alert alert-info mt-3">
+        <strong>Nota:</strong> O atributo <code>data-bs-placement</code> controla a posição (top, right, bottom, left).
+        O Bootstrap 5 não depende mais do jQuery para esta funcionalidade.
+      </div>
+
+      <h4 class="mt-4"><i class="bi bi-chat-right-text me-2"></i>Popover</h4>
+      <p>Popovers são semelhantes aos tooltips, mas podem conter mais conteúdo e um título:</p>
+
+      <pre><code>&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="popover" 
+        data-bs-placement="right" 
+        data-bs-content="Conteúdo do popover" 
+        title="Título do Popover"&gt;
+    Popover exemplo
+&lt;/button&gt;
+
+&lt;script&gt;
+    // Ativar popovers - também obrigatório
+    document.addEventListener('DOMContentLoaded', function() {
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+        });
+    });
+&lt;/script&gt;</code></pre>
+
+      <div class="text-center component-link">
+        <a href="componentes.html#popover-tooltip" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+
+    <!-- Accordion e Media -->
+    <div class="code-section" id="accordion-media-code">
+      <h2><i class="bi bi-layout-split me-2"></i>Accordion e Media Object</h2>
+
+      <div class="component-explanation">
+        <h4>Para que servem?</h4>
+        <p>O Accordion permite organizar conteúdo em seções recolhíveis, enquanto o Media Object é perfeito para
+          comentários, posts e qualquer conteúdo com imagem + texto.</p>
+
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Boas práticas:</h5>
+          <ul>
+            <li>Use accordion para FAQs, instruções em etapas ou conteúdo longo que pode ser organizado</li>
+            <li>Media Object é ideal para listas de comentários, posts de blog ou qualquer conteúdo com avatar/imagem
+            </li>
+            <li>No accordion, mantenha uma seção aberta por padrão para orientar o usuário</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="mt-4"><i class="bi bi-menu-button me-2"></i>Accordion</h4>
+      <p>Estrutura básica de um accordion com Bootstrap:</p>
+
+      <pre><code>&lt;div class="accordion" id="accordionExample"&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header" id="headingOne"&gt;
+            &lt;button class="accordion-button" type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#collapseOne"&gt;
+                Item #1
+            &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="collapseOne" class="accordion-collapse collapse show" 
+             data-bs-parent="#accordionExample"&gt;
+            &lt;div class="accordion-body"&gt;
+                Conteúdo do primeiro item.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header" id="headingTwo"&gt;
+            &lt;button class="accordion-button collapsed" type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#collapseTwo"&gt;
+                Item #2
+            &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="collapseTwo" class="accordion-collapse collapse" 
+             data-bs-parent="#accordionExample"&gt;
+            &lt;div class="accordion-body"&gt;
+                Conteúdo do segundo item.
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <div class="alert alert-warning mt-3">
+        <strong>Importante:</strong> O atributo <code>data-bs-parent</code> garante que apenas um item fique aberto por
+        vez. Remova-o se quiser múltiplos itens abertos simultaneamente.
+      </div>
+
+      <h4 class="mt-4"><i class="bi bi-card-image me-2"></i>Media Object</h4>
+      <p>O Media Object foi substituído pelo utilitário Flex no Bootstrap 5, mas mantém a mesma funcionalidade:</p>
+
+      <pre><code>&lt;div class="d-flex"&gt;
+    &lt;div class="flex-shrink-0"&gt;
+        &lt;img src="caminho/para/imagem.jpg" alt="Descrição" width="64" height="64"&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-grow-1 ms-3"&gt;
+        &lt;h5&gt;Título do conteúdo&lt;/h5&gt;
+        &lt;p&gt;Texto explicativo ou conteúdo principal. Pode incluir HTML.&lt;/p&gt;
+        
+        &lt;!-- Media Object aninhado --&gt;
+        &lt;div class="d-flex mt-3"&gt;
+            &lt;div class="flex-shrink-0"&gt;
+                &lt;img src="caminho/para/outra-imagem.jpg" alt="Descrição" width="48" height="48"&gt;
+            &lt;/div&gt;
+            &lt;div class="flex-grow-1 ms-3"&gt;
+                &lt;h6&gt;Resposta ou conteúdo relacionado&lt;/h6&gt;
+                &lt;p&gt;Texto adicional.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <div class="text-center component-link">
+        <a href="componentes.html#accordion-media" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+
+    <!-- Buttons e Alert -->
+    <div class="code-section" id="buttons-alert-code">
+      <h2><i class="bi bi-joystick me-2"></i>Buttons e Alert</h2>
+
+      <div class="component-explanation">
+        <h4>Componentes fundamentais</h4>
+        <p>Botões são elementos interativos essenciais, enquanto alerts fornecem feedback contextual ao usuário.</p>
+
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Dicas importantes:</h5>
+          <ul>
+            <li>Use cores de botão de forma semântica (success para ações positivas, danger para destrutivas)</li>
+            <li>Alerts devem ser usados para mensagens temporárias ou que requerem atenção</li>
+            <li>Para formulários, prefira <code>&lt;button type="submit"&gt;</code> em vez de <code>&lt;div&gt;</code>
+            </li>
+            <li>Alerts descartáveis devem ser usados para mensagens não críticas</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="mt-4"><i class="bi bi-arrow-right-circle me-2"></i>Buttons</h4>
+      <p>Bootstrap oferece uma variedade de estilos e tamanhos de botões:</p>
+
+      <pre><code>&lt;!-- Cores básicas --&gt;
+&lt;button type="button" class="btn btn-primary"&gt;Primário&lt;/button&gt;
+&lt;button type="button" class="btn btn-success"&gt;Sucesso&lt;/button&gt;
+&lt;button type="button" class="btn btn-danger"&gt;Perigo&lt;/button&gt;
+
+&lt;!-- Outline --&gt;
+&lt;button type="button" class="btn btn-outline-primary"&gt;Outline&lt;/button&gt;
+
+&lt;!-- Tamanhos --&gt;
+&lt;button type="button" class="btn btn-primary btn-lg"&gt;Grande&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary btn-sm"&gt;Pequeno&lt;/button&gt;
+
+&lt;!-- Estado desabilitado --&gt;
+&lt;button type="button" class="btn btn-primary" disabled&gt;Desabilitado&lt;/button&gt;
+
+&lt;!-- Botão como link --&gt;
+&lt;a class="btn btn-primary" href="#" role="button"&gt;Link&lt;/a&gt;
+
+&lt;!-- Botões em bloco --&gt;
+&lt;div class="d-grid gap-2"&gt;
+    &lt;button class="btn btn-primary" type="button"&gt;Botão em bloco&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+      <h4 class="mt-4"><i class="bi bi-exclamation-triangle me-2"></i>Alerts</h4>
+      <p>Alerts fornecem mensagens de feedback contextualizadas:</p>
+
+      <pre><code>&lt;!-- Alertas básicos --&gt;
+&lt;div class="alert alert-primary"&gt;Mensagem primária&lt;/div&gt;
+&lt;div class="alert alert-success"&gt;Ação bem sucedida!&lt;/div&gt;
+
+&lt;!-- Alert com título --&gt;
+&lt;div class="alert alert-warning"&gt;
+    &lt;h4 class="alert-heading"&gt;Atenção!&lt;/h4&gt;
+    &lt;p&gt;Esta é uma mensagem importante que requer sua atenção.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Alert descartável --&gt;
+&lt;div class="alert alert-danger alert-dismissible fade show"&gt;
+    Erro! Algo deu errado.
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+      <div class="text-center component-link">
+        <a href="componentes.html#buttons-alert" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="code-section" id="modal-code">
+      <h2><i class="bi bi-window me-2"></i>Modal</h2>
+
+      <div class="component-explanation">
+        <h4>Caixas de diálogo flexíveis</h4>
+        <p>Modais são caixas de diálogo sobrepostas que exigem interação do usuário antes de retornar à página
+          principal.</p>
+
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Quando usar modais:</h5>
+          <ul>
+            <li>Para confirmações importantes (excluir item, confirmar ação)</li>
+            <li>Exibir formulários sem sair da página atual</li>
+            <li>Mostrar conteúdo adicional (imagens ampliadas, detalhes)</li>
+            <li><strong>Evite</strong> usar para erros críticos ou informações essenciais</li>
+          </ul>
+        </div>
+      </div>
+
+      <pre><code>&lt;!-- Botão para acionar modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"&gt;
+  Abrir Modal
+&lt;/button&gt;
+
+&lt;!-- Estrutura do Modal --&gt;
+&lt;div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true"&gt;
+  &lt;div class="modal-dialog modal-dialog-centered"&gt; &lt;!-- centralizado --&gt;
+      &lt;div class="modal-content"&gt;
+          &lt;div class="modal-header"&gt;
+              &lt;h5 class="modal-title"&gt;Título do Modal&lt;/h5&gt;
+              &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="modal-body"&gt;
+              &lt;p&gt;Conteúdo principal do modal. Pode incluir formulários, textos, etc.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="modal-footer"&gt;
+              &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Fechar&lt;/button&gt;
+              &lt;button type="button" class="btn btn-primary"&gt;Salvar&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <div class="alert alert-info mt-3">
+        <strong>Dica:</strong> Você pode controlar o tamanho do modal com classes como <code>modal-lg</code> ou
+        <code>modal-sm</code> no elemento <code>modal-dialog</code>.
+      </div>
+
+      <div class="text-center component-link">
+        <a href="componentes.html#modal" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="code-section" id="navbar-code">
+      <h2><i class="bi bi-menu-button-wide me-2"></i>Navbar Avançado</h2>
+
+      <div class="component-explanation">
+        <h4>Barra de navegação responsiva</h4>
+        <p>O Navbar é um dos componentes mais complexos do Bootstrap, mas também um dos mais úteis para criar menus de
+          navegação.</p>
+
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Recursos avançados:</h5>
+          <ul>
+            <li><strong>Responsividade automática</strong> - Colapsa em menu hamburger em telas pequenas</li>
+            <li><strong>Posicionamento flexível</strong> - Pode ficar fixo no topo ou rodapé</li>
+            <li><strong>Temas de cor</strong> - light/dark ou cores personalizadas</li>
+            <li><strong>Dropdowns integrados</strong> - Para menus hierárquicos</li>
+          </ul>
+        </div>
+      </div>
+
+      <pre><code>&lt;nav class="navbar navbar-expand-lg navbar-dark bg-primary"&gt;
+  &lt;div class="container"&gt;
+      &lt;!-- Brand/logo --&gt;
+      &lt;a class="navbar-brand" href="#"&gt;Meu Site&lt;/a&gt;
+      
+      &lt;!-- Botão para mobile --&gt;
+      &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"&gt;
+          &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      
+      &lt;!-- Itens do menu --&gt;
+      &lt;div class="collapse navbar-collapse" id="navbarContent"&gt;
+          &lt;ul class="navbar-nav me-auto mb-2 mb-lg-0"&gt;
+              &lt;li class="nav-item"&gt;
+                  &lt;a class="nav-link active" href="#"&gt;Início&lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li class="nav-item"&gt;
+                  &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+              &lt;/li&gt;
+              
+              &lt;!-- Dropdown --&gt;
+              &lt;li class="nav-item dropdown"&gt;
+                  &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown"&gt;
+                      Dropdown
+                  &lt;/a&gt;
+                  &lt;ul class="dropdown-menu"&gt;
+                      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Ação&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Outra ação&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Algo mais&lt;/a&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+              &lt;/li&gt;
+          &lt;/ul&gt;
+          
+          &lt;!-- Formulário de busca --&gt;
+          &lt;form class="d-flex"&gt;
+              &lt;input class="form-control me-2" type="search" placeholder="Buscar"&gt;
+              &lt;button class="btn btn-outline-light" type="submit"&gt;Buscar&lt;/button&gt;
+          &lt;/form&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+      <div class="alert alert-warning mt-3">
+        <strong>Importante:</strong> O Navbar requer o JavaScript do Bootstrap para funcionar corretamente,
+        especialmente o menu mobile.
+      </div>
+
+      <div class="text-center component-link">
+        <a href="componentes.html#navbar" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="code-section" id="cards-code">
+      <h2><i class="bi bi-card-text me-2"></i>Cards</h2>
+
+      <div class="component-explanation">
+        <h4>Contêineres versáteis</h4>
+        <p>Cards são contêineres flexíveis e extensíveis para exibir conteúdo de forma organizada.</p>
+
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Casos de uso comuns:</h5>
+          <ul>
+            <li>Produtos em e-commerces</li>
+            <li>Posts em redes sociais</li>
+            <li>Painéis de métricas/resumo</li>
+            <li>Galeria de itens</li>
+            <li>Cartões de perfil</li>
+          </ul>
+        </div>
+      </div>
+
+      <pre><code>&lt;!-- Card básico --&gt;
+&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;img src="produto.jpg" class="card-img-top" alt="Produto"&gt;
+  &lt;div class="card-body"&gt;
+      &lt;h5 class="card-title"&gt;Nome do Produto&lt;/h5&gt;
+      &lt;p class="card-text"&gt;Descrição breve do produto.&lt;/p&gt;
+      &lt;a href="#" class="btn btn-primary"&gt;Comprar&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Card com cabeçalho e rodapé --&gt;
+&lt;div class="card text-center"&gt;
+  &lt;div class="card-header"&gt;
+      Destaque
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+      &lt;h5 class="card-title"&gt;Título especial&lt;/h5&gt;
+      &lt;p class="card-text"&gt;Com texto de apoio abaixo como introdução.&lt;/p&gt;
+      &lt;a href="#" class="btn btn-primary"&gt;Ver mais&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="card-footer text-muted"&gt;
+      2 dias atrás
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Card com grid --&gt;
+&lt;div class="row row-cols-1 row-cols-md-3 g-4"&gt;
+  &lt;div class="col"&gt;
+      &lt;div class="card h-100"&gt;
+          &lt;div class="card-body"&gt;
+              &lt;h5 class="card-title"&gt;Card 1&lt;/h5&gt;
+              &lt;p class="card-text"&gt;Conteúdo do primeiro card.&lt;/p&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col"&gt;
+      &lt;div class="card h-100"&gt;
+          &lt;div class="card-body"&gt;
+              &lt;h5 class="card-title"&gt;Card 2&lt;/h5&gt;
+              &lt;p class="card-text"&gt;Conteúdo do segundo card.&lt;/p&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <div class="text-center component-link">
+        <a href="componentes.html#cards" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-0">Tutorial Bootstrap &copy; 2025 - UFF</p>
+      <p class="mb-0 mt-2">
+        <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
