@@ -4,12 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/all.css" rel="stylesheet">
   <link href="assets/css/styles.css" rel="stylesheet">
   <title>Tutorial Bootstrap - Exemplos de Código</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <style>
@@ -57,7 +55,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
           <li class="nav-item"><a class="nav-link" href="componentes.html">Componentes</a></li>
-          <li class="nav-item"><a class="nav-link" href="exemplos.html">Exemplos</a></li>
+          <li class="nav-item active"><a class="nav-link" href="exemplos.html">Exemplos</a></li>
           <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
         </ul>
       </div>
@@ -511,7 +509,273 @@
         </a>
       </div>
     </div>
+    <!-- List Group -->
+    <div class="code-section" id="list-group-code">
+      <h2><i class="bi bi-list-ul me-2"></i>List Group</h2>
+
+      <div class="component-explanation">
+        <h4>O que é?</h4>
+        <p>List Groups são componentes flexíveis para exibir séries de conteúdo em formato de lista. Podem ser usados para menus, painéis laterais ou qualquer lista de itens.</p>
+
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Quando usar:</h5>
+          <ul>
+            <li>Para criar menus laterais</li>
+            <li>Exibir listas de itens com ações</li>
+            <li>Criar painéis de seleção</li>
+            <li>Mostrar listas de notificações ou mensagens</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="mt-4"><i class="bi bi-list-check me-2"></i>Lista Básica</h4>
+      <p>Estrutura simples de uma List Group:</p>
+
+      <pre><code>&lt;ul class="list-group"&gt;
+    &lt;li class="list-group-item"&gt;Primeiro item&lt;/li&gt;
+    &lt;li class="list-group-item"&gt;Segundo item&lt;/li&gt;
+    &lt;li class="list-group-item"&gt;Terceiro item&lt;/li&gt;
+    &lt;li class="list-group-item"&gt;Quarto item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Lista com badges --&gt;
+&lt;ul class="list-group"&gt;
+    &lt;li class="list-group-item d-flex justify-content-between align-items-center"&gt;
+        Item com badge
+        &lt;span class="badge bg-primary rounded-pill"&gt;14&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="list-group-item d-flex justify-content-between align-items-center"&gt;
+        Outro item
+        &lt;span class="badge bg-danger rounded-pill"&gt;2&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+      <h4 class="mt-4"><i class="bi bi-list-task me-2"></i>Lista com Ações</h4>
+      <p>List Groups podem ser transformados em elementos interativos:</p>
+
+      <pre><code>&lt;div class="list-group"&gt;
+    &lt;a href="#" class="list-group-item list-group-item-action active"&gt;
+        Item ativo
+    &lt;/a&gt;
+    &lt;a href="#" class="list-group-item list-group-item-action"&gt;Item normal&lt;/a&gt;
+    &lt;a href="#" class="list-group-item list-group-item-action disabled"&gt;Item desabilitado&lt;/a&gt;
+    &lt;a href="#" class="list-group-item list-group-item-action list-group-item-danger"&gt;Item perigoso&lt;/a&gt;
+    &lt;a href="#" class="list-group-item list-group-item-action list-group-item-success"&gt;Item de sucesso&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- Lista com conteúdo customizado --&gt;
+&lt;div class="list-group"&gt;
+    &lt;a href="#" class="list-group-item list-group-item-action"&gt;
+        &lt;div class="d-flex w-100 justify-content-between"&gt;
+            &lt;h5 class="mb-1"&gt;Título do item&lt;/h5&gt;
+            &lt;small&gt;3 dias atrás&lt;/small&gt;
+        &lt;/div&gt;
+        &lt;p class="mb-1"&gt;Conteúdo do item. Pode incluir várias linhas de texto.&lt;/p&gt;
+        &lt;small&gt;Texto secundário.&lt;/small&gt;
+    &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+      <div class="text-center component-link">
+        <a href="componentes.html#list-group" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+
+    <!-- Spinners -->
+    <div class="code-section" id="spinners-code">
+      <h2><i class="bi bi-arrow-repeat me-2"></i>Spinners</h2>
+
+      <div class="component-explanation">
+        <h4>Indicadores de carregamento</h4>
+        <p>Spinners são usados para mostrar que um conteúdo está sendo carregado ou uma ação está em processamento.</p>
+
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Boas práticas:</h5>
+          <ul>
+            <li>Use para operações que levam mais de 0.5 segundos</li>
+            <li>Combine com texto explicativo quando possível</li>
+            <li>Escolha o estilo que melhor combina com seu design</li>
+            <li>Remova o spinner imediatamente quando a ação terminar</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="mt-4"><i class="bi bi-stopwatch me-2"></i>Spinners de Bordas</h4>
+      <p>Spinners que giram apenas a borda do elemento:</p>
+
+      <pre><code>&lt;!-- Spinners básicos --&gt;
+&lt;div class="spinner-border text-primary" role="status"&gt;
+    &lt;span class="visually-hidden"&gt;Carregando...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-border text-secondary" role="status"&gt;
+    &lt;span class="visually-hidden"&gt;Carregando...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Tamanhos --&gt;
+&lt;div class="spinner-border spinner-border-sm" role="status"&gt;
+    &lt;span class="visually-hidden"&gt;Carregando...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-border" style="width: 3rem; height: 3rem;" role="status"&gt;
+    &lt;span class="visually-hidden"&gt;Carregando...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+      <h4 class="mt-4"><i class="bi bi-hourglass-split me-2"></i>Spinners de Crescimento</h4>
+      <p>Spinners que pulsam em vez de girar:</p>
+
+      <pre><code>&lt;div class="spinner-grow text-success" role="status"&gt;
+    &lt;span class="visually-hidden"&gt;Carregando...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="spinner-grow text-danger" role="status"&gt;
+    &lt;span class="visually-hidden"&gt;Carregando...&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Com texto --&gt;
+&lt;div class="d-flex align-items-center"&gt;
+    &lt;strong&gt;Carregando...&lt;/strong&gt;
+    &lt;div class="spinner-border ms-auto" role="status" aria-hidden="true"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Dentro de botões --&gt;
+&lt;button class="btn btn-primary" type="button" disabled&gt;
+    &lt;span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="visually-hidden"&gt;Carregando...&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+
+      <div class="text-center component-link">
+        <a href="componentes.html#spinners" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="code-section" id="progress-code">
+      <h2><i class="bi bi-speedometer2 me-2"></i>Progress</h2>
+
+      <div class="component-explanation">
+        <h4>Barras de progresso</h4>
+        <p>Componentes para mostrar o progresso de uma tarefa ou processo.</p>
+
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Dicas importantes:</h5>
+          <ul>
+            <li>Sempre inclua rótulos acessíveis com <code>aria-*</code></li>
+            <li>Use cores diferentes para diferentes estados (sucesso, perigo, etc.)</li>
+            <li>Para processos desconhecidos, considere usar spinners animados</li>
+            <li>Atualize visualmente o progresso em tempo real quando possível</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="mt-4"><i class="bi bi-bar-chart me-2"></i>Barras Básicas</h4>
+      <p>Exemplos de barras de progresso simples:</p>
+
+      <pre><code>&lt;!-- Barra simples --&gt;
+&lt;div class="progress"&gt;
+    &lt;div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Com rótulo --&gt;
+&lt;div class="progress"&gt;
+    &lt;div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"&gt;50%&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Altura personalizada --&gt;
+&lt;div class="progress" style="height: 20px;"&gt;
+    &lt;div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <div class="text-center component-link">
+        <a href="componentes.html#progress" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+
+    <!-- Offcanvas -->
+    <div class="code-section" id="offcanvas-code">
+      <h2><i class="bi bi-layout-sidebar me-2"></i>Offcanvas</h2>
+    
+      <div class="component-explanation">
+        <h4>Barra lateral deslizante</h4>
+        <p>Offcanvas é usado para exibir menus, opções ou informações adicionais fora da área principal da tela.</p>
+    
+        <div class="best-practices">
+          <h5><i class="bi bi-lightbulb"></i> Boas práticas:</h5>
+          <ul>
+            <li>Use para opções de navegação ou configurações adicionais</li>
+            <li>Evite colocar conteúdos críticos dentro do Offcanvas</li>
+            <li>Garanta que o botão de fechamento esteja sempre visível</li>
+            <li>Considere ativar ou não o backdrop dependendo da necessidade</li>
+          </ul>
+        </div>
+      </div>
+    
+      <h4 class="mt-4"><i class="bi bi-arrow-left-right me-2"></i>Offcanvas com body scroll</h4>
+      <p>Permite rolar a página mesmo com o Offcanvas aberto:</p>
+    
+      <pre><code>&lt;button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"&gt;
+      Abrir Offcanvas
+    &lt;/button&gt;
+    
+    &lt;div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel"&gt;
+      &lt;div class="offcanvas-header"&gt;
+        &lt;h5 class="offcanvas-title" id="offcanvasScrollingLabel"&gt;Offcanvas com Scroll&lt;/h5&gt;
+        &lt;button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="offcanvas-body"&gt;
+        &lt;p&gt;É possível rolar a página com este Offcanvas aberto.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+    
+      <h4 class="mt-4"><i class="bi bi-arrows-angle-expand me-2"></i>Offcanvas com scroll e backdrop</h4>
+      <p>Permite rolar a página, mas mantém o fundo escurecido:</p>
+    
+      <pre><code>&lt;button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"&gt;
+      Abrir Offcanvas
+    &lt;/button&gt;
+    
+    &lt;div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel"&gt;
+      &lt;div class="offcanvas-header"&gt;
+        &lt;h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"&gt;Scroll com Backdrop&lt;/h5&gt;
+        &lt;button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="offcanvas-body"&gt;
+        &lt;p&gt;A página pode ser rolada, mas com um fundo escuro.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+    
+      <h4 class="mt-4"><i class="bi bi-lock-fill me-2"></i>Offcanvas com backdrop estático</h4>
+      <p>O Offcanvas não fecha ao clicar fora dele:</p>
+    
+      <pre><code>&lt;button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"&gt;
+      Abrir Offcanvas
+    &lt;/button&gt;
+    
+    &lt;div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel"&gt;
+      &lt;div class="offcanvas-header"&gt;
+        &lt;h5 class="offcanvas-title" id="staticBackdropLabel"&gt;Backdrop Estático&lt;/h5&gt;
+        &lt;button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="offcanvas-body"&gt;
+        &lt;p&gt;Clique fora não fechará este Offcanvas.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+    
+      <div class="text-center component-link">
+        <a href="componentes.html#offcanvas" class="btn btn-outline-primary">
+          <i class="bi bi-eye"></i> Ver componente em ação
+        </a>
+      </div>
+    </div>
+    
   </div>
+
+  
 
   <footer class="bg-dark text-white py-4 mt-5">
     <div class="container text-center">

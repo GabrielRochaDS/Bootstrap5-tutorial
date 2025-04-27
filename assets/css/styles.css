@@ -1,0 +1,5 @@
+.nav-item.active .nav-link {
+    color: #ffffff !important; /* ou qualquer cor que você desejar */
+    font-weight: bold;
+    /* outros estilos que você queira aplicar */
+}
