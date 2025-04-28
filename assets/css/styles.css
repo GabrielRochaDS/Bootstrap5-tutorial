@@ -1,5 +1,117 @@
 .nav-item.active .nav-link {
-    color: #ffffff !important; /* ou qualquer cor que você desejar */
+    color: #ffffff !important;
+    /* ou qualquer cor que você desejar */
     font-weight: bold;
     /* outros estilos que você queira aplicar */
+}
+
+
+/* Estilos para o contato */
+.about-project {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-header {
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Estilos para os Exemplos */
+
+.code-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.component-explanation {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border-left: 4px solid #0d6efd;
+}
+
+.component-link {
+    margin-top: 1.5rem;
+}
+
+.best-practices {
+    background-color: #e7f1ff;
+    border-left: 4px solid #0d6efd;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+
+
+/* Estilos para os componentes do Bootstrap */
+
+.component-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.code-link {
+    margin-top: 1rem;
+}
+
+
+/* Estilos para melhorar a experiência mobile */
+.card,
+.list-group {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    margin-bottom: 0.5rem;
+    white-space: normal;
+}
+
+.carousel {
+    margin-bottom: 1.5rem;
+}
+
+.progress {
+    margin-bottom: 0.5rem;
+}
+
+/* Ajustes para espaçamento em mobile */
+@media (max-width: 768px) {
+    .component-section {
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .row>div {
+        margin-bottom: 1rem;
+    }
+
+    .btn-group .btn {
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
 }
