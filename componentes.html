@@ -14,23 +14,37 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Tutorial Bootstrap</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menuNav">
+            <a class="navbar-brand fw-bold" href="#">Tutorial Bootstrap</a>
+
+            <!-- Botão visível apenas em telas pequenas -->
+            <div class="dropdown d-lg-none ms-auto">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="mobileMenuButton"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="mobileMenuButton">
+                    <li><a class="dropdown-item" href="index.html">Início</a></li>
+                    <li><a class="dropdown-item" href="componentes.html">Componentes</a></li>
+                    <li><a class="dropdown-item" href="exemplos.html">Exemplos</a></li>
+                    <li><a class="dropdown-item" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Navegação normal visível apenas em telas grandes -->
+            <div class="collapse navbar-collapse d-none d-lg-block" id="menuNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="componentes.html">Componentes</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="componentes.html">Componentes</a></li>
                     <li class="nav-item"><a class="nav-link" href="exemplos.html">Exemplos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <div class="container my-5 pt-4"> <!-- Adicionado pt-4 para compensar a navbar fixa -->
         <h1 class="text-center mb-4">Principais Componentes do Bootstrap</h1>

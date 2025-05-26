@@ -13,23 +13,37 @@
          padding: 5rem 0;
          margin-bottom: 3rem;
       }
-      
+
       .feature-icon {
          font-size: 2.5rem;
-         margin-bottom: 1rem; 
+         margin-bottom: 1rem;
          color: #0066ff;
       }
    </style>
 </head>
 
 <body>
+   <!-- NAVBAR -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
       <div class="container">
          <a class="navbar-brand fw-bold" href="#">Tutorial Bootstrap</a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="menuNav">
+
+         <!-- Botão visível apenas em telas pequenas -->
+         <div class="dropdown d-lg-none ms-auto">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="mobileMenuButton"
+               data-bs-toggle="dropdown" aria-expanded="false">
+               Menu
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="mobileMenuButton">
+               <li><a class="dropdown-item" href="index.html">Início</a></li>
+               <li><a class="dropdown-item" href="componentes.html">Componentes</a></li>
+               <li><a class="dropdown-item" href="exemplos.html">Exemplos</a></li>
+               <li><a class="dropdown-item" href="contato.html">Contato</a></li>
+            </ul>
+         </div>
+
+         <!-- Navegação normal visível apenas em telas grandes -->
+         <div class="collapse navbar-collapse d-none d-lg-block" id="menuNav">
             <ul class="navbar-nav ms-auto">
                <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
                <li class="nav-item"><a class="nav-link" href="componentes.html">Componentes</a></li>
@@ -40,10 +54,12 @@
       </div>
    </nav>
 
+
    <section class="bg-primary hero-section">
       <div class="container text-center">
          <h1 class="display-4 fw-bold mb-4">Bem-vindo ao Tutorial Bootstrap</h1>
-         <p class="lead mb-4">Aprenda a usar os principais componentes do Bootstrap 5 de forma prática e rápida com nossos exemplos prontos para implementação!</p>
+         <p class="lead mb-4">Aprenda a usar os principais componentes do Bootstrap 5 de forma prática e rápida com
+            nossos exemplos prontos para implementação!</p>
          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <a href="componentes.html" class="btn btn-light btn-lg px-4 gap-3">Ver Componentes</a>
          </div>
@@ -59,7 +75,9 @@
                      <i class="bi bi-question-circle"></i>
                   </div>
                   <h3 class="card-title">O que é Bootstrap?</h3>
-                  <p class="card-text">Bootstrap é um framework front-end open-source para criação de sites e aplicações web responsivas. Desenvolvido inicialmente pelo Twitter, é hoje um dos projetos mais populares no mundo.</p>
+                  <p class="card-text">Bootstrap é um framework front-end open-source para criação de sites e aplicações
+                     web responsivas. Desenvolvido inicialmente pelo Twitter, é hoje um dos projetos mais populares no
+                     mundo.</p>
                   <a href="componentes.html" class="btn btn-outline-primary">Saiba Mais</a>
                </div>
             </div>
@@ -73,10 +91,14 @@
                   </div>
                   <h3 class="card-title">Principais Recursos</h3>
                   <ul class="list-group list-group-flush border-top">
-                     <li class="list-group-item border-0 ps-0"><i class="bi bi-check-circle-fill text-primary me-2"></i>Sistema de grid responsivo</li>
-                     <li class="list-group-item border-0 ps-0"><i class="bi bi-check-circle-fill text-primary me-2"></i>Componentes pré-construídos</li>
-                     <li class="list-group-item border-0 ps-0"><i class="bi bi-check-circle-fill text-primary me-2"></i>Design mobile-first</li>
-                     <li class="list-group-item border-0 ps-0"><i class="bi bi-check-circle-fill text-primary me-2"></i>Personalização via Sass</li>
+                     <li class="list-group-item border-0 ps-0"><i
+                           class="bi bi-check-circle-fill text-primary me-2"></i>Sistema de grid responsivo</li>
+                     <li class="list-group-item border-0 ps-0"><i
+                           class="bi bi-check-circle-fill text-primary me-2"></i>Componentes pré-construídos</li>
+                     <li class="list-group-item border-0 ps-0"><i
+                           class="bi bi-check-circle-fill text-primary me-2"></i>Design mobile-first</li>
+                     <li class="list-group-item border-0 ps-0"><i
+                           class="bi bi-check-circle-fill text-primary me-2"></i>Personalização via Sass</li>
                   </ul>
                </div>
             </div>
@@ -89,7 +111,8 @@
                      <i class="bi bi-lightning"></i>
                   </div>
                   <h5 class="card-title">Por que usar Bootstrap?</h5>
-                  <p class="card-text">Acelera o desenvolvimento, garantindo consistência visual e compatibilidade entre navegadores. Ideal para prototipagem rápida e projetos responsivos.</p>
+                  <p class="card-text">Acelera o desenvolvimento, garantindo consistência visual e compatibilidade entre
+                     navegadores. Ideal para prototipagem rápida e projetos responsivos.</p>
                </div>
             </div>
          </div>
@@ -101,8 +124,10 @@
                      <i class="bi bi-book"></i>
                   </div>
                   <h5 class="card-title">Documentação Completa</h5>
-                  <p class="card-text">Uma das melhores documentações entre frameworks front-end, com exemplos práticos e snippets de código prontos para uso.</p>
-                  <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" class="btn btn-outline-primary mt-2" target="_blank">Ver Documentação</a>
+                  <p class="card-text">Uma das melhores documentações entre frameworks front-end, com exemplos práticos
+                     e snippets de código prontos para uso.</p>
+                  <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/"
+                     class="btn btn-outline-primary mt-2" target="_blank">Ver Documentação</a>
                </div>
             </div>
          </div>
@@ -114,7 +139,8 @@
                      <i class="bi bi-people"></i>
                   </div>
                   <h5 class="card-title">Comunidade Ativa</h5>
-                  <p class="card-text">Grande comunidade de desenvolvedores, com temas, plugins e soluções para problemas comuns, além de constante evolução do framework.</p>
+                  <p class="card-text">Grande comunidade de desenvolvedores, com temas, plugins e soluções para
+                     problemas comuns, além de constante evolução do framework.</p>
                </div>
             </div>
          </div>
@@ -126,16 +152,22 @@
                   <div class="row g-4">
                      <div class="col-md-6 text-start">
                         <ul class="list-unstyled">
-                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Remoção da dependência do jQuery</li>
-                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Novo sistema de ícones</li>
-                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>API JavaScript melhorada</li>
+                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Remoção da dependência
+                              do jQuery</li>
+                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Novo sistema de ícones
+                           </li>
+                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>API JavaScript
+                              melhorada</li>
                         </ul>
                      </div>
                      <div class="col-md-6 text-start">
                         <ul class="list-unstyled">
-                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Novos utilitários e componentes</li>
-                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Melhorias no sistema de grid</li>
-                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Focado em desempenho</li>
+                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Novos utilitários e
+                              componentes</li>
+                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Melhorias no sistema de
+                              grid</li>
+                           <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Focado em desempenho
+                           </li>
                         </ul>
                      </div>
                   </div>
@@ -151,7 +183,8 @@
          <p class="mb-4">© 2025 - UFF. Todos os direitos reservados.</p>
          <div class="d-flex justify-content-center gap-3">
             <a href="https://github.com/GabrielRochaDS" class="text-white fs-4"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/gabrielrochads/" class="text-white fs-4"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/gabrielrochads/" class="text-white fs-4"><i
+                  class="bi bi-linkedin"></i></a>
          </div>
       </div>
    </footer>
